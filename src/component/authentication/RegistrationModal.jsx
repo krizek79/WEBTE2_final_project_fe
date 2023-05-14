@@ -83,6 +83,7 @@ export default function RegistrationModal(props) {
                     registrationError.classList.remove("text-red-500")
                     registrationError.classList.add("text-green-500")
                     registrationError.innerHTML = response.data.message
+                    alert(response.data.message)
                     toggleModal()
                 }
             })

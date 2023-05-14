@@ -1,9 +1,11 @@
 import {useState} from "react";
 import authenticationService from "../../service/AuthenticationService.js";
+import {useNavigate} from "react-router-dom";
 
 export default function LoginModal(props) {
 
     const toggleModal = props.action
+    const navigate = useNavigate()
     const [loginRequest, setLoginRequest] = useState({
         email: "",
         password: ""
@@ -55,6 +57,7 @@ export default function LoginModal(props) {
                     localStorage.setItem("role", response.data.role)
                     console.log(response.data)
                     authenticateError.innerHTML = ""
+                    navigate("/home")
                 }
             })
             .catch(e => {
