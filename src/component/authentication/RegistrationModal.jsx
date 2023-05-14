@@ -8,7 +8,7 @@ export default function RegistrationModal(props) {
         email: "",
         password: "",
         matchingPassword: "",
-        role: ""
+        role: "student"
     })
 
     function validateEmail(email) {
@@ -162,6 +162,37 @@ export default function RegistrationModal(props) {
                                 onChange={handleChange}
                             />
                             <span id="registrationMatchingPasswordError" className="text-red-500 text-sm"></span>
+                        </div>
+                        <div className="mb-2">
+                            <div className="block text-sm font-semibold text-gray-800">
+                                Account type
+                            </div>
+                            <div className="mt-2 flex items-center">
+                                <input
+                                    id="student"
+                                    type="radio"
+                                    name="role"
+                                    value="student"
+                                    checked={registrationRequest.role === "student"}
+                                    onChange={handleChange}
+                                    className="mr-2"
+                                />
+                                <label htmlFor="student" className="mr-4">
+                                    Student
+                                </label>
+                                <input
+                                    id="teacher"
+                                    type="radio"
+                                    name="role"
+                                    value="teacher"
+                                    checked={registrationRequest.role === "teacher"}
+                                    onChange={handleChange}
+                                    className="mr-2"
+                                />
+                                <label htmlFor="teacher" className="mr-4">
+                                    Teacher
+                                </label>
+                            </div>
                         </div>
                         <div className="mt-6">
                             <button
