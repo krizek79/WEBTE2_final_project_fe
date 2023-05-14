@@ -1,5 +1,5 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Login from "./component/Login.jsx";
+import Authentication from "./component/authentication/Authentication.jsx";
 
 export default function App() {
 
@@ -7,7 +7,7 @@ export default function App() {
     <>
         <BrowserRouter>
             <Routes>
-                <Route index element={<Login/>}/>
+                <Route index element={<Authentication/>}/>
             </Routes>
         </BrowserRouter>
     </>
