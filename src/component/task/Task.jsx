@@ -1,10 +1,44 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react'
+import taskService from "../../service/TaskService.js"
 
 export default function Task(props) {
 
-    useEffect(() => {
+    const [task, setTask] = useState({
+        description: "",
+        imageUrl: "../../../public/blokovka01_00002.jpg"
+    })
 
+    const [request, setRequest] = useState({
+        answer: null
+    })
+
+    useEffect(() => {
+        taskService.getTaskById(props.id)
+            .then(response => {
+                if (response.status === 200) {
+                    console.log(response.data)
+                }
+            })
+            .catch(e => {
+                console.log(e.response.status + ": " + e.response.data.message)
+            })
     }, [])
+
+    function handleChange(e) {
+        setRequest({ ...request, [e.target.name]: e.target.value })
+    }
+
+    function submit() {
+        taskService.submitTask(request)
+            .then(response => {
+                if (response.status === 200) {
+                    console.log(response.data)
+                }
+            })
+            .catch(e => {
+                console.log(e.response.status + ": " + e.response.data.message)
+            })
+    }
 
     return (
         <div className="px-2 md:px-6 my-5 w-full text-slate-700 dark:text-dark flex flex-col items-center">
@@ -19,9 +53,11 @@ export default function Task(props) {
                         <p className="text-sm">
                             Nájdite prenosovú funkciu pre systém opísaný blokovou schémou:
                         </p>
-                        <div className="mt-5 rounded-t-xl w-full h-64 shadow-sm">
-                            <img src="../../../public/blokovka01_00002.jpg" alt="Block" className="w-full h-full"/>
-                        </div>
+                        {task.imageUrl && (
+                            <div className="mt-5 rounded-t-xl w-full h-64 shadow-sm">
+                                <img src={task.imageUrl} alt="Block" className="w-full h-full"/>
+                            </div>
+                        )}
                         <form className="w-full p-3 flex flex-col justify-between h-auto overflow-auto lg:h-auto">
                             <div className="mt-5 relative z-0 col-span-2">
                                 <textarea
