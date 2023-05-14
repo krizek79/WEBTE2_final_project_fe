@@ -64,6 +64,7 @@ export default function RegistrationModal(props) {
     }
 
     function register() {
+        let registrationError = document.getElementById("registrationError")
         let emailValid = validateEmail(registrationRequest.email)
         let passwordValid = validatePassword(registrationRequest.password)
         let matchingPasswordValid = validateMatchingPassword(
@@ -77,10 +78,18 @@ export default function RegistrationModal(props) {
 
         return authenticationService.register(registrationRequest)
             .then(response => {
-                console.log(response)
+                if (response.status === 200) {
+                    console.log(response.data)
+                    registrationError.classList.remove("text-red-500")
+                    registrationError.classList.add("text-green-500")
+                    registrationError.innerHTML = response.data.message
+                    toggleModal()
+                }
             })
             .catch(e => {
                 console.log(e.response.status + ": " + e.response.data.message)
+                registrationError.classList.add("text-red-500")
+                registrationError.innerHTML = e.response.data.message
             })
     }
 
@@ -91,7 +100,7 @@ export default function RegistrationModal(props) {
                 focus:outline-none w-full rounded-md"
             >
                 <div
-                    className="sm:px-6 w-11/12 md:w-full p-6 pt-3 m-auto bg-white rounded-md shadow-md lg:max-w-xl
+                    className="sm:px-6 w-11/12 md:max-w-xl md:w-full p-6 pt-3 m-auto bg-white rounded-md shadow-md
                     overflow-y-auto"
                 >
                     <div className={"flex width-full justify-between border-b pb-3"}>
@@ -204,6 +213,10 @@ export default function RegistrationModal(props) {
                                 Sign up
                             </button>
                         </div>
+                        <span
+                            id="registrationError"
+                            className="text-sm text-red-500 w-full flex justify-center mt-3"
+                        ></span>
                     </div>
                 </div>
             </div>

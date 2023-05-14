@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const AUTH_API_BASE_URL = "https://site138.webte.fei.stuba.sk"
+const AUTH_API_BASE_URL = "http://localhost/api"
 
 export default new class AuthService {
 
@@ -9,6 +9,6 @@ export default new class AuthService {
     }
 
     authenticate(request) {
-        return axios.post(AUTH_API_BASE_URL + "/login", request)
+        return axios.post(AUTH_API_BASE_URL + "/authenticate", request)
     }
 }

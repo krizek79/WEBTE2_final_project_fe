@@ -42,6 +42,7 @@ export default function LoginModal(props) {
     }
 
     function authenticate() {
+        let authenticateError = document.getElementById("authenticateError")
         if (!validateEmail(loginRequest.email) || !validatePassword(loginRequest.password)) {
             return
         }
@@ -52,15 +53,13 @@ export default function LoginModal(props) {
                     localStorage.setItem("token", response.data.token)
                     localStorage.setItem("email", response.data.email)
                     localStorage.setItem("role", response.data.role)
-                } else {
-
+                    console.log(response.data)
+                    authenticateError.innerHTML = ""
                 }
             })
             .catch(e => {
-                if (e.response.status === 401) {
-                } else {
-                    console.log(e.response.status + ": " + e.response.data.message)
-                }
+                console.log(e.response.status + ": " + e.response.data.message)
+                authenticateError.innerHTML = e.response.data.message
             })
     }
 
@@ -133,6 +132,10 @@ export default function LoginModal(props) {
                             >
                                 Sign in
                             </button>
+                            <span
+                                id="authenticateError"
+                                className="text-sm text-red-500 w-full flex justify-center mt-3"
+                            ></span>
                         </div>
                     </div>
                 </div>
