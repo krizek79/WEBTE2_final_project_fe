@@ -30,8 +30,8 @@ export default function NavBar() {
                     className="flex text-3xl font-bold leading-none text-dark hover:text-azure"
                     href="#"
                 >
-                    <img src="../../../public/logo.png" height={50} width={50} className="mr-10"  alt=""/>
-                    NumeralNinja
+                    <img src="../../../public/logo.png" height={60} width={170} className="mr-10"  alt=""/>
+
                 </a>
 
                 {localStorage.getItem("token") && (
