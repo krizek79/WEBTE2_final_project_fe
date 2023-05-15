@@ -25,12 +25,15 @@ export default function NavBar() {
     return (
         <>
             <nav className="relative px-12 py-3 flex justify-between items-center bg-light">
+
                 <a
-                    className="text-3xl font-bold leading-none text-dark hover:text-azure"
+                    className="flex text-3xl font-bold leading-none text-dark hover:text-azure"
                     href="#"
                 >
+                    <img src="../../../public/logo.png" height={50} width={50} className="mr-10"  alt=""/>
                     NumeralNinja
                 </a>
+
                 {localStorage.getItem("token") && (
                     <div>
                         <div className="lg:hidden">
