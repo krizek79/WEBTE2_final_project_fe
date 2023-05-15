@@ -54,6 +54,8 @@ export default function LoginModal(props) {
                 if (response.status === 200 && response.data.token) {
                     localStorage.setItem("token", response.data.token)
                     localStorage.setItem("email", response.data.email)
+                    localStorage.setItem("firstName", response.data.firstName)
+                    localStorage.setItem("lastName", response.data.lastName)
                     localStorage.setItem("role", response.data.role)
                     authenticateError.innerHTML = ""
                     navigate("/home")
