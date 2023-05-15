@@ -17,7 +17,9 @@ export default function NavBar() {
 
     const logout = () => {
         localStorage.removeItem("token")
-        localStorage.removeItem("user")
+        localStorage.removeItem("firstName")
+        localStorage.removeItem("lastName")
+        localStorage.removeItem("email")
         localStorage.removeItem("role")
         navigate("/")
     }
@@ -48,14 +50,19 @@ export default function NavBar() {
                           </button>
                         </div>
                         <div>
-                          <ul
-                              className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2
-                              lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6"
-                          >
-                            <li><a className="text-xl text-dark hover:text-gray-500" href="#">Home</a></li>
-                            <li><a className="text-xl text-dark hover:text-gray-500" href="#">Exams</a></li>
-                            <li><a className="text-xl text-dark hover:text-gray-500" href="#">Solutions</a></li>
-                          </ul>
+                            {localStorage.getItem("role") === "teacher" && (
+                                <ul
+                                    className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2
+                                    -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6"
+                                >
+                                    <li>
+                                        <a className="text-xl text-dark hover:text-gray-500" href="#">Define tasks</a>
+                                    </li>
+                                    <li>
+                                        <a className="text-xl text-dark hover:text-gray-500" href="#">Statistics</a>
+                                    </li>
+                                </ul>
+                            )}
                           <a
                               className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100
                               text-smtext-gray-900 font-bold  rounded-xl transition duration-200 hover:cursor-pointer"
@@ -91,32 +98,26 @@ export default function NavBar() {
                             </button>
                         </div>
                         <div>
-                            <ul>
-                                <li className="mb-1">
-                                    <a
-                                        className="block p-4 text-xl font-semibold text-gray-400 hover:bg-gray-50
+                            {localStorage.getItem("role") === "teacher" && (
+                                <ul>
+                                    <li className="mb-1">
+                                        <a
+                                            className="block p-4 text-xl font-semibold text-gray-400 hover:bg-gray-50
                                         hover:text-azure rounded" href="#"
-                                    >
-                                        Home
-                                    </a>
-                                </li>
-                                <li className="mb-1">
-                                    <a
-                                        className="block p-4 text-xl font-semibold text-gray-400 hover:bg-gray-50
+                                        >
+                                            Define tasks
+                                        </a>
+                                    </li>
+                                    <li className="mb-1">
+                                        <a
+                                            className="block p-4 text-xl font-semibold text-gray-400 hover:bg-gray-50
                                         hover:text-azure rounded" href="#"
-                                    >
-                                        Exams
-                                    </a>
-                                </li>
-                                <li className="mb-1">
-                                    <a
-                                        className="block p-4 text-xl font-semibold text-gray-400 hover:bg-gray-50
-                                        hover:text-azure rounded" href="#"
-                                    >
-                                        Solutions
-                                    </a>
-                                </li>
-                            </ul>
+                                        >
+                                            Statistics
+                                        </a>
+                                    </li>
+                                </ul>
+                            )}
                         </div>
                         <div className="mt-auto">
                             <div className="pt-6">
@@ -137,7 +138,7 @@ export default function NavBar() {
                             </p>
                         </div>
                     </nav>
-              </div>
+            </div>
         </>
     )
 }
