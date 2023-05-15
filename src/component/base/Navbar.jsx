@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import {useNavigate} from "react-router-dom";
+import SubHeader from "./SubHeader.jsx";
 
 export default function NavBar() {
 
@@ -27,7 +28,6 @@ export default function NavBar() {
     return (
         <>
             <nav className="relative px-12 py-3 flex justify-between items-center bg-light">
-
                 <a
                     className="flex text-3xl font-bold leading-none text-dark hover:text-azure"
                     href="#"
@@ -139,6 +139,7 @@ export default function NavBar() {
                         </div>
                     </nav>
             </div>
+            <SubHeader/>
         </>
     )
 }
