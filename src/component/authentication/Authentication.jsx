@@ -1,11 +1,19 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import RegistrationModal from "./RegistrationModal.jsx";
 import LoginModal from "./LoginModal.jsx";
+import {useNavigate} from "react-router-dom";
 
 export default function Authentication() {
 
+    const navigate = useNavigate()
     const [loginModal, setLoginModal] = useState(false)
     const [registrationModal, setRegistrationModal] = useState(false)
+
+    useEffect(() => {
+        if (localStorage.getItem("token")) {
+            navigate("/home")
+        }
+    }, [])
 
     function toggleLoginModal() {
         setLoginModal(!loginModal)
