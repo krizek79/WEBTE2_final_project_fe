@@ -3,15 +3,14 @@ import {useState} from "react";
 export default function ExampleList() {
 
   const [options, setOptions] = useState([
-    { id: 'blok1-1', label: 'Blokovka 1', example: "priklad 1" },
+    { id: 'blok3-1', label: 'Blokovka 4', example: "priklad 1" },
     { id: 'blok1-2', label: 'Blokovka 1', example: "priklad 2" },
     { id: 'odozva1-1', label: 'Odozva 1 ', example: "priklad 1" },
     { id: 'odozva2-1', label: 'Odozva 2 ', example: "priklad 1" },
     { id: 'odozva2-4', label: 'Odozva 2 ', example: "priklad 2" },
     { id: 'odozva2-5', label: 'Odozva 2 ', example: "priklad 3" },
     { id: 'odozva2-6', label: 'Odozva 2 ', example: "priklad 4" },
-
-
+      { id: 'odozva5-6', label: 'Odozva 2 ', example: "priklad 4" },
   ]);
 
   const handleSelectChange = (e, id) => {
