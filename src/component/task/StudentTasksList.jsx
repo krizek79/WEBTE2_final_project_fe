@@ -23,7 +23,7 @@ export default function StudentTasksList() {
     };
 
     return(
-        <div className="flex items-center flex-col bg-white">
+        <div className="flex items-center flex-col bg-white mx-6">
             <section className="bg-light p-10 rounded-xl shadow-xl pb-4">
                 <div
                     className="mx-auto grid max-w-6xl grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3
