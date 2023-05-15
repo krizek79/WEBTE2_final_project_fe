@@ -1,6 +1,44 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react'
+import taskService from "../../service/TaskService.js"
 
-export default function Task() {
+export default function Task(props) {
+
+    const [task, setTask] = useState({
+        description: "",
+        imageUrl: "../../../public/blokovka01_00002.jpg"
+    })
+
+    const [request, setRequest] = useState({
+        answer: null
+    })
+
+    useEffect(() => {
+        taskService.getTaskById(props.id)
+            .then(response => {
+                if (response.status === 200) {
+                    console.log(response.data)
+                }
+            })
+            .catch(e => {
+                console.log(e.response.status + ": " + e.response.data.message)
+            })
+    }, [])
+
+    function handleChange(e) {
+        setRequest({ ...request, [e.target.name]: e.target.value })
+    }
+
+    function submit() {
+        taskService.submitTask(request)
+            .then(response => {
+                if (response.status === 200) {
+                    console.log(response.data)
+                }
+            })
+            .catch(e => {
+                console.log(e.response.status + ": " + e.response.data.message)
+            })
+    }
 
     return (
         <div className="px-2 md:px-6 my-5 w-full text-slate-700 dark:text-dark flex flex-col items-center">
@@ -12,16 +50,29 @@ export default function Task() {
                         <h1 className="text-left text-sm md:text-lg font-bold leading-normal">
                             1. Example
                         </h1>
-                        <p className="text-sm">Nájdite prenosovú funkciu pre systém opísaný blokovou schémou:</p>
-                        <div className="mt-5 rounded-t-xl w-full h-64 shadow-sm">
-                            <img src="../../../public/blokovka01_00002.jpg" alt="Block" className="w-full h-full"/>
-                        </div>
+                        <p className="text-sm">
+                            Nájdite prenosovú funkciu pre systém opísaný blokovou schémou:
+                        </p>
+                        {task.imageUrl && (
+                            <div className="mt-5 rounded-t-xl w-full h-64 shadow-sm">
+                                <img src={task.imageUrl} alt="Block" className="w-full h-full"/>
+                            </div>
+                        )}
                         <form className="w-full p-3 flex flex-col justify-between h-auto overflow-auto lg:h-auto">
                             <div className="mt-5 relative z-0 col-span-2">
-                                <textarea name="message" rows="3" className="peer block w-full appearance-none border-0 border-b border-dark bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-gray-600 focus:outline-none focus:ring-0" placeholder=" "></textarea>
-                                <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-dark peer-focus:dark:text-dark">Tvoja odpoveď</label>
+                                <textarea
+                                    name="message" rows="3"
+                                    className="peer block w-full appearance-none border-0 border-b border-dark
+                                    bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-gray-600
+                                    focus:outline-none focus:ring-0" placeholder="Your sollution"
+                                ></textarea>
                             </div>
-                            <button type="submit" className="mt-5 rounded-md bg-dark px-10 py-2 text-white hover:bg-azure ">Send Answear</button>
+                            <button
+                                type="submit"
+                                className="mt-5 rounded-md bg-dark px-10 py-2 text-white hover:bg-azure"
+                            >
+                                Submit
+                            </button>
                         </form>
                     </div>
                 </div>
