@@ -19,6 +19,7 @@ export default function StudentTaskGenerator() {
     };
 
     return (
+        /*
         <div className="flex items-center flex-col bg-white">
             <div className="bg-light p-10 rounded-xl shadow-xl ml-5 mr-5 mb-0 pb-4 flow-root">
                 <div className="flex flex-col justify-center items-center text-center">
@@ -64,6 +65,61 @@ export default function StudentTaskGenerator() {
                                         <option value="option3">Option 3</option>
                                     </select>
                                 </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div className="flex justify-center">
+                    <button className="mt-12 bg-dark text-white px-4 rounded-full py-3 hover:bg-azure">
+                        Generate
+                    </button>
+                </div>
+            </div>
+        </div>
+
+         */
+        <div className="flex items-center flex-col bg-white">
+            <div className="bg-light p-5 rounded-xl shadow-xl ml-5 mr-5 mb-0 pb-4 flow-root">
+                <div className="flex flex-col justify-center items-center text-center">
+                    <div className="max-w-sm font-bold font-sans text-2xl">
+                        My Task
+                    </div>
+                    <div className="font-light max-w-lg mt-5 text-sm">
+                        Click to task and solved it
+                    </div>
+                </div>
+
+                <div
+                    className="mx-auto grid max-w-6xl grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3
+                    lg:grid-cols-4"
+                >
+                    {options.map((option) => (
+                        <div
+                            key={option.id}
+                            className="rounded-xl bg-white p-2 hover:shadow-xl"
+                        >
+                            <div
+                                className="flex flex-col p-4 rounded-xl bg-white "
+                            >
+                                <div className="mt-3 font-semibold text-lg">{option.label}</div>
+                                <div className="text-sm font-light">info</div>
+                                <div className="my-4">
+                                    <span className="font-bold text-base">Body: </span>
+                                    <span className="font-bold text-base">{option.point}</span>
+                                </div>
+
+                                    <input
+                                        type={"number"}
+                                        id={option.id}
+                                        value={option.selectedOption || ""}
+                                        onChange={(e) => handleSelectChange(e, option.id)}
+                                        className="block w-full py-2 px-4 pr-3 rounded-md bg-white border
+                                        border-gray-300 focus:outline-none focus:ring-2 focus:ring-dark
+                                        focus:border-azure"
+                                    >
+
+                                    </input>
+
                             </div>
                         </div>
                     ))}

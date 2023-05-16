@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import  {useEffect, useState} from 'react'
 import taskService from "../../service/TaskService.js"
 
 export default function Task(props) {
