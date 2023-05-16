@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import taskService from "../../service/TaskService.js"
-import TextWithLatex from "./TextWithLatex.jsx";
-import MathInput from "./MathInput.jsx";
+import TextWithLatex from "../../util/TextWithLatex.jsx";
 
 export default function Task(props) {
 
@@ -14,7 +13,7 @@ export default function Task(props) {
     })
 
     const [request, setRequest] = useState({
-        answer: null
+        answer: ""
     })
 
     useEffect(() => {
@@ -29,20 +28,18 @@ export default function Task(props) {
         //     })
     }, [])
 
-    function handleChange(e) {
-        setRequest({ ...request, [e.target.name]: e.target.value })
-    }
-
-    function submit() {
-        taskService.submitTask(request)
-            .then(response => {
-                if (response.status === 200) {
-                    console.log(response.data)
-                }
-            })
-            .catch(e => {
-                console.log(e.response.status + ": " + e.response.data.message)
-            })
+    function submit(e) {
+        e.preventDefault()
+        console.log(request)
+        // taskService.submitTask(request)
+        //     .then(response => {
+        //         if (response.status === 200) {
+        //             console.log(response.data)
+        //         }
+        //     })
+        //     .catch(e => {
+        //         console.log(e.response.status + ": " + e.response.data.message)
+        //     })
     }
 
     function removeIncludeGraphics(str) {
@@ -70,10 +67,9 @@ export default function Task(props) {
                             <img src={task.imageUrl} alt="Block" className="w-full h-auto"/>
                         </div>
                     )}
-                    <form className="w-full flex flex-col">
-                        <div id="mathInput" className="">
-                            <MathInput/>
-                        </div>
+                    <form className="w-full flex flex-col gap-y-3" onSubmit={submit}>
+                        <label htmlFor="mathInput">Your answer:</label>
+                        <math-field id="mathInput"></math-field>
                         <button
                             type="submit"
                             className="rounded-md bg-dark py-2 text-white hover:bg-azure"
@@ -83,44 +79,6 @@ export default function Task(props) {
                     </form>
                 </div>
             </div>
-
-
-            {/*<div className="px-2 md:px-6 my-5 w-full text-slate-700 dark:text-dark flex flex-col items-center">*/}
-            {/*    <a*/}
-            {/*        href="/home"*/}
-            {/*        className="hover:cursor-pointer justify-start w-full underline text-dark hover:text-azure"*/}
-            {/*    >*/}
-            {/*        Back to home page*/}
-            {/*    </a>*/}
-            {/*    <div className="max-w-xl text-left flex flex-col w-full items-center justify-center md:p-4 ">*/}
-            {/*        <div*/}
-            {/*            className="w-full rounded-xl flex-col xl:flex-row bg-white dark:bg-light shadow-md"*/}
-            {/*        >*/}
-            {/*            <div className="w-full p-6 flex flex-col justify-between h-auto overflow-auto lg:h-auto">*/}
-            {/*                <p className="">*/}
-            {/*                    <TextWithLatex text={removeIncludeGraphics(task.description)}/>*/}
-            {/*                </p>*/}
-            {/*                {task.imageUrl && (*/}
-            {/*                    <div className="py-6 rounded-t-xl w-full h-64 shadow-sm">*/}
-            {/*                        <img src={task.imageUrl} alt="Block" className="w-full h-full"/>*/}
-            {/*                    </div>*/}
-            {/*                )}*/}
-            {/*                <form className="w-full p-3 flex flex-col justify-between h-auto overflow-auto lg:h-auto">*/}
-            {/*                    <div id="mathInput" className="">*/}
-            {/*                        <MathInput/>*/}
-            {/*                    </div>*/}
-            {/*                    <button*/}
-            {/*                        type="submit"*/}
-            {/*                        className="mt-5 rounded-md bg-dark px-10 py-2 text-white hover:bg-azure"*/}
-            {/*                    >*/}
-            {/*                        Submit*/}
-            {/*                    </button>*/}
-            {/*                </form>*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
-
         </main>
     )
 }
