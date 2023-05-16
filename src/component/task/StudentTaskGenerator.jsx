@@ -125,7 +125,7 @@ export default function StudentTaskGenerator() {
                     ))}
                 </div>
                 <div className="flex justify-center">
-                    <button className="mt-12 bg-dark text-white px-4 rounded-full py-3 hover:bg-azure">
+                    <button className="bg-dark text-white px-4 rounded-full py-3 hover:bg-azure">
                         Generate
                     </button>
                 </div>
