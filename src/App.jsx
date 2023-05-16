@@ -15,7 +15,6 @@ export default function App() {
                 <Route index element={<Authentication/>}/>
                 <Route path="/home" element={<Home/>}/>
                 <Route path="/task" element={<Task/>}/>
-
             </Routes>
         </BrowserRouter>
     </>

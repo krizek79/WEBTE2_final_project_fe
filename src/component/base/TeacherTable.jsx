@@ -75,13 +75,13 @@ import $ from 'jquery';
                             {/* Data to table*/}
                             {/*{this.state.data.map((result) => {*/}
                             {/*    return (*/}
-                            {/*        <tr>*/}
-                            {/*            <td>{result.id}</td>*/}
-                            {/*            <td>{result.name}</td>*/}
-                            {/*            <td>{result.surname}</td>*/}
-                            {/*            <td>{result.allStudentTasks}</td>*/}
-                            {/*            <td>{result.allStudentSubmitTasks}</td>*/}
-                            {/*            <td>{result.allStudentPoints}</td>*/}
+                            {/*        <tr className="bg-white">*/}
+                            {/*            <td className="border px-4 py-2 >{result.id}</td>*/}
+                            {/*            <td className="border px-4 py-2 >{result.name}</td>*/}
+                            {/*            <td className="border px-4 py-2 >{result.surname}</td>*/}
+                            {/*            <td className="border px-4 py-2 items-center text-center">{result.allStudentTasks}</td>*/}
+                            {/*            <td className="border px-4 py-2 items-center text-center">{result.allStudentSubmitTasks}</td>*/}
+                            {/*            <td className="border px-4 py-2 items-center text-center">{result.allStudentPoints}</td>*/}
                             {/*        </tr>*/}
                             {/*    )*/}
                             {/*})}*/}
