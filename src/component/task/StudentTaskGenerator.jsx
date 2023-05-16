@@ -19,69 +19,11 @@ export default function StudentTaskGenerator() {
     };
 
     return (
-        /*
-        <div className="flex items-center flex-col bg-white">
-            <div className="bg-light p-10 rounded-xl shadow-xl ml-5 mr-5 mb-0 pb-4 flow-root">
-                <div className="flex flex-col justify-center items-center text-center">
-                    <div className="max-w-sm font-bold font-sans text-2xl">
-                        Generate new tasks
-                    </div>
-                    <div className="font-light max-w-lg mt-5 text-sm">
-                        You can choose the number of examples you want to solve
-                    </div>
-                </div>
 
-                <div
-                    className="flex flex-col md:flex-row space-x-0 md:space-x-8 space-y-12 mr-8  md:space-y-0
-                    justify-center items-center mt-10"
-                >
-                    {options.map((option) => (
-                        <div
-                            key={option.id}
-                            className="flex flex-col md:flex-row space-x-0 md:space-x-8 space-y-12 md:space-y-0
-                            justify-center items-center"
-                        >
-                            <div
-                                className="flex flex-col p-8 rounded-xl bg-white shadow-xl translate-x-4
-                                translate-y-4 w-50 md:w-auto"
-                            >
-                                <div className="mt-3 font-semibold text-lg">{option.label}</div>
-                                <div className="text-sm font-light">info</div>
-                                <div className="my-4">
-                                    <span className="font-bold text-base">{option.point}</span>
-                                </div>
-                                <div className="relative inline-block w-48">
-                                    <select
-                                        id={option.id}
-                                        value={option.selectedOption || ""}
-                                        onChange={(e) => handleSelectChange(e, option.id)}
-                                        className="block w-full py-2 px-4 pr-8 rounded-md bg-white border
-                                        border-gray-300 focus:outline-none focus:ring-2 focus:ring-dark
-                                        focus:border-azure"
-                                    >
-                                        <option value="">Choose count</option>
-                                        <option value="option1">Option 1</option>
-                                        <option value="option2">Option 2</option>
-                                        <option value="option3">Option 3</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                <div className="flex justify-center">
-                    <button className="mt-12 bg-dark text-white px-4 rounded-full py-3 hover:bg-azure">
-                        Generate
-                    </button>
-                </div>
-            </div>
-        </div>
-
-         */
-        <div className="flex items-center flex-col bg-white">
+        <div className="font-serif flex items-center flex-col bg-white">
             <div className="bg-light p-5 rounded-xl shadow-xl ml-5 mr-5 mb-0 pb-4 flow-root">
                 <div className="flex flex-col justify-center items-center text-center">
-                    <div className="max-w-sm font-bold font-sans text-2xl">
+                    <div className="max-w-sm font-bold font-serif text-2xl">
                         My Task
                     </div>
                     <div className="font-light max-w-lg mt-5 text-sm">

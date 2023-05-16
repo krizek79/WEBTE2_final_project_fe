@@ -49,10 +49,10 @@ import $ from 'jquery';
 
         //Datatable HTML
         return (
-            <div className="MainDiv mt-4 mx-auto max-w-4xl">
+            <div className="font-serif MainDiv mt-4 mx-auto max-w-4xl">
                 <div className="bg-wite p-5 rounded-xl shadow-xl  ml-10 mr-10 mb-0 pb-4 flow-root">
                     <div className="jumbotron text-center">
-                        <h3 className="text-2xl">Teacher`s Table</h3>
+                        <h3 className=" font-bold text-2xl">Teacher`s Table</h3>
                     </div>
                     <div className="overflow-x-auto">
                         <table
@@ -61,7 +61,7 @@ import $ from 'jquery';
                             ref={tableRef}
                         >
                             <thead>
-                            <tr className="bg-light ">
+                            <tr className="bg-light">
                                 <th className="border px-4 py-2 w-16">ID</th>
                                 <th className="border px-4 py-2 w-24">Name</th>
                                 <th className="border px-4 py-2 w-24">Surname</th>
