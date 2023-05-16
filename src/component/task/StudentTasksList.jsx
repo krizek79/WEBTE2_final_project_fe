@@ -28,7 +28,7 @@ export default function StudentTasksList() {
     return(
 
         <div className="font-serif flex items-center flex-col bg-white">
-            <section className="bg-light p-5 rounded-xl shadow-xl pb-4">
+            <section className="bg-light p-5 ml-5 mr-5 rounded-xl shadow-xl pb-4">
                 <div className="flex flex-col justify-center items-center text-center">
                     <div className="max-w-sm font-bold font-serif text-2xl mb-3">
                         My Tasks
