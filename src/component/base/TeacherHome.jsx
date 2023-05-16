@@ -18,7 +18,7 @@ export default function TeacherHome() {
         <>
             <form>
                 <div className="bg-white mt-6 pb-12">
-                    <div className="pr-4 max-w-7xl sm:px-6 lg:px-8">
+                    <div className=" max-w-8xl sm:px-6 lg:px-8">
                         <div className="max-w-2xl pr-4 pl-4 mt-0 mr-auto ml-auto sm:px-6 lg:px-8">
                             <div
                                 className="bg-light shadow-xl pt-4 pr-10 pb-4 pl-10 flow-root rounded-lg sm:py-2">
@@ -28,7 +28,7 @@ export default function TeacherHome() {
                                     </div>
                                     <div>
                                         {options.map((option) => (
-                                            <div key={option.id} className="pt-6">
+                                            <div key={option.id} className="pt-6 pb-6 border-b-2 border-dark border-dashed">
                                                     <div className="flex items-center flex-1 min-w-0">
                                                         <div className="ml-4 flex-1 min-w-0">
                                                             <p className="text-lg font-bold text-gray-800 truncate"> {option.label}</p>
@@ -64,11 +64,13 @@ export default function TeacherHome() {
                                                         <div className="inline-flex items-center justify-center  pr-auto border rounded-md mt-3 bg-gray-200">
                                                             <input
                                                                 type="datetime-local"
+                                                                id="accessibleFrom"
                                                                 className="focus:outline-none border-0 p-2 w-40 rounded-l-md border-r border-gray-300"
                                                             />
                                                             <div className="bg-dark text-white inline-block px-2 h-full">to</div>
                                                             <input
                                                                 type="datetime-local"
+                                                                id="accessibleTo"
                                                                 className="focus:outline-none border-0 p-2 w-40 rounded-r-md border-l border-gray-300"
                                                             />
                                                         </div>

@@ -30,7 +30,7 @@ export default function StudentTaskGenerator() {
                         Click to task and solved it
                     </div>
                 </div>
-
+                <form>
                 <div
                     className="mx-auto grid max-w-6xl grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3
                     lg:grid-cols-4"
@@ -53,24 +53,24 @@ export default function StudentTaskGenerator() {
                                     <input
                                         type={"number"}
                                         id={option.id}
+                                        placeholder="Count of tasks"
                                         value={option.selectedOption || ""}
                                         onChange={(e) => handleSelectChange(e, option.id)}
                                         className="block w-full py-2 px-4 pr-3 rounded-md bg-white border
                                         border-gray-300 focus:outline-none focus:ring-2 focus:ring-dark
                                         focus:border-azure"
                                     >
-
                                     </input>
-
                             </div>
                         </div>
                     ))}
                 </div>
                 <div className="flex justify-center">
-                    <button className="bg-dark text-white px-4 rounded-full py-3 hover:bg-azure">
+                    <button type={"submit"} className="bg-dark text-white px-4 rounded-full py-3 hover:bg-azure">
                         Generate
                     </button>
                 </div>
+                </form>
             </div>
         </div>
     )

@@ -10,7 +10,7 @@ import 'datatables.net-buttons/js/buttons.print';
 
 import $ from 'jquery';
 
-    const TeacherTable = () => {
+    const StudentDetailsTable = () => {
         const tableRef = useRef(null);
 
         /*
@@ -52,7 +52,7 @@ import $ from 'jquery';
             <div className="font-serif MainDiv mt-4 mx-auto max-w-4xl">
                 <div className="bg-wite p-5 rounded-xl shadow-xl  ml-10 mr-10 mb-0 pb-4 flow-root">
                     <div className="jumbotron text-center">
-                        <h3 className=" font-bold text-2xl">Teacher`s Table</h3>
+                        <h3 className=" font-bold text-2xl">Student Detail Table</h3>
                     </div>
                     <div className="overflow-x-auto">
                         <table
@@ -62,11 +62,11 @@ import $ from 'jquery';
                         >
                             <thead>
                             <tr className="bg-light">
-                                <th className="border px-4 py-2 w-16">ID</th>
-                                <th className="border px-4 py-2 w-24">Name</th>
-                                <th className="border px-4 py-2 w-24">Surname</th>
-                                <th className="border px-4 py-2 w-16">All Task Count</th>
-                                <th className="border px-4 py-2 w-24">Submit Task Count</th>
+                                <th className="border px-4 py-2 w-32">File</th>
+                                <th className="border px-4 py-2 w-16">Task</th>
+                                <th className="border px-4 py-2 w-16">Answer</th>
+                                <th className="border px-4 py-2 w-16">Solution</th>
+                                <th className="border px-4 py-2 w-16">Correctness</th>
                                 <th className="border px-4 py-2 w-16">Points</th>
                             </tr>
                             </thead>
@@ -76,39 +76,39 @@ import $ from 'jquery';
                             {/*{this.state.data.map((result) => {*/}
                             {/*    return (*/}
                             {/*        <tr className="bg-white">*/}
-                            {/*            <td className="border px-4 py-2 >{result.id}</td>*/}
-                            {/*            <td className="border px-4 py-2 >{result.name}</td>*/}
-                            {/*            <td className="border px-4 py-2 >{result.surname}</td>*/}
-                            {/*            <td className="border px-4 py-2 items-center text-center">{result.allStudentTasks}</td>*/}
-                            {/*            <td className="border px-4 py-2 items-center text-center">{result.allStudentSubmitTasks}</td>*/}
-                            {/*            <td className="border px-4 py-2 items-center text-center">{result.allStudentPoints}</td>*/}
+                            {/*                <td className="border px-4 py-2">{result.file_name}</td>*/}
+                            {/*                <td className="border px-4 py-2">{result.task_id}</td>*/}
+                            {/*                <td className="border px-4 py-2 items-center text-center">{result.student_answer}</td>*/}
+                            {/*                <td className="border px-4 py-2 items-center text-center">{result.solution}</td>*/}
+                            {/*                <td className="border px-4 py-2 items-center text-center">{result.correctness}</td>*/}
+                            {/*                <td className="border px-4 py-2 items-center text-center">{result.points}</td>*/}
                             {/*        </tr>*/}
                             {/*    )*/}
                             {/*})}*/}
 
                             <tr className="bg-white">
-                                <td className="border px-4 py-2 ">1</td>
-                                <td className="border px-4 py-2">Janko</td>
-                                <td className="border px-4 py-2 bold text-decoration-underline"><a href="">Mrkvička</a></td>
+                                <td className="border px-4 py-2">blokovka1</td>
+                                <td className="border px-4 py-2">2</td>
                                 <td className="border px-4 py-2 items-center text-center">10</td>
-                                <td className="border px-4 py-2 items-center text-center">7</td>
-                                <td className="border px-4 py-2 items-center text-center">14</td>
+                                <td className="border px-4 py-2 items-center text-center">10</td>
+                                <td className="border px-4 py-2 items-center text-center">correct</td>
+                                <td className="border px-4 py-2 items-center text-center">2</td>
                             </tr>
                             <tr className="bg-white">
-                                <td className="border px-4 py-2">1</td>
-                                <td className="border px-4 py-2">Zdenko</td>
-                                <td className="border px-4 py-2">ZPopradu</td>
-                                <td className="border px-4 py-2 items-center text-center">5</td>
-                                <td className="border px-4 py-2 items-center text-center">3</td>
-                                <td className="border px-4 py-2 items-center text-center">6</td>
+                                <td className="border px-4 py-2 ">blokovka1</td>
+                                <td className="border px-4 py-2">2</td>
+                                <td className="border px-4 py-2 items-center text-center">10</td>
+                                <td className="border px-4 py-2 items-center text-center">10</td>
+                                <td className="border px-4 py-2 items-center text-center">correct</td>
+                                <td className="border px-4 py-2 items-center text-center">2</td>
                             </tr>
                             <tr className="bg-white">
-                                <td className="border px-4 py-2">1</td>
-                                <td className="border px-4 py-2">Jožo</td>
-                                <td className="border px-4 py-2">Čučvara</td>
-                                <td className="border px-4 py-2 items-center text-center">12</td>
+                                <td className="border px-4 py-2 ">blokovka1</td>
+                                <td className="border px-4 py-2">2</td>
                                 <td className="border px-4 py-2 items-center text-center">10</td>
-                                <td className="border px-4 py-2 items-center text-center">20</td>
+                                <td className="border px-4 py-2 items-center text-center">10</td>
+                                <td className="border px-4 py-2 items-center text-center">correct</td>
+                                <td className="border px-4 py-2 items-center text-center">2</td>
                             </tr>
                             </tbody>
                         </table>
@@ -117,5 +117,5 @@ import $ from 'jquery';
             </div>
         );
     };
-export default TeacherTable;
+export default StudentDetailsTable;
 
