@@ -49,10 +49,10 @@ import $ from 'jquery';
 
         //Datatable HTML
         return (
-            <div className="font-serif MainDiv mt-4 mx-auto max-w-4xl">
-                <div className="bg-wite p-5 rounded-xl shadow-xl  ml-10 mr-10 mb-0 pb-4 flow-root">
-                    <div className="jumbotron text-center">
-                        <h3 className=" font-bold text-2xl">Student Detail Table</h3>
+            <div className="font-serif max-w-4xl py-6 mx-auto">
+                <div className="bg-wite p-5  rounded-xl shadow-xl mx-5 pb-4 flow-root">
+                    <div className="text-center">
+                        <h3 className="font-bold text-2xl">Student Detail Table</h3>
                     </div>
                     <div className="overflow-x-auto">
                         <table

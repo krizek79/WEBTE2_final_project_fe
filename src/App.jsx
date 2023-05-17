@@ -6,7 +6,6 @@ import Home from "./component/base/Home.jsx";
 import Task from "./component/task/Task.jsx";
 import StudentTasksList from "./component/task/StudentTasksList.jsx";
 import StudentTaskGenerator from "./component/task/StudentTaskGenerator.jsx";
-
 import TeacherTable from "./component/base/TeacherTable.jsx";
 import StudentDetailsTable from "./component/base/StudentDetailsTable.jsx";
 import TeacherHome from "./component/base/TeacherHome.jsx";

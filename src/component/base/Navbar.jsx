@@ -27,7 +27,6 @@ export default function NavBar() {
     return (
         <>
             <nav className="relative px-12 py-3 flex justify-between items-center bg-light">
-
                 <a
                     className="flex text-3xl font-bold leading-none text-dark hover:text-azure"
                     href="#"

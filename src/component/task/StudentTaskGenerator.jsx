@@ -20,8 +20,8 @@ export default function StudentTaskGenerator() {
 
     return (
 
-        <div className="font-serif flex items-center flex-col bg-white">
-            <div className="bg-light p-5 rounded-xl shadow-xl ml-5 mr-5 mb-0 pb-4 flow-root">
+        <div className="font-serif flex items-center flex-col py-6 bg-white">
+            <div className="bg-light p-5 rounded-xl shadow-xl mx-5 pb-4 flow-root">
                 <div className="flex flex-col justify-center items-center text-center">
                     <div className="max-w-sm font-bold font-serif text-2xl">
                         My Task

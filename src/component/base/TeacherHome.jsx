@@ -17,7 +17,7 @@ export default function TeacherHome() {
     return (
         <>
             <form>
-                <div className="bg-white mt-6 pb-12">
+                <div className="bg-white mt-6 py-6">
                     <div className=" max-w-8xl sm:px-6 lg:px-8">
                         <div className="max-w-2xl pr-4 pl-4 mt-0 mr-auto ml-auto sm:px-6 lg:px-8">
                             <div

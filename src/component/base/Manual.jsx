@@ -21,18 +21,18 @@ export default function Manual() {
 
     return (
         <>
-        <div className="relative container px-4 mx-auto pt-6">
-            <div className="max-w-5xl mx-auto rounded-xl shadow-xl">
+        <div className="relative container px-4 mx-auto py-6">
+            <div className="max-w-5xl px-3 mx-auto rounded-xl shadow-xl">
                 <div id="divToExport" >
                 <div className="flex flex-col items-center">
                     <h2 className="font-bold text-5xl mt-5 tracking-tight">
                         Manual
                     </h2>
-                    <p className="text-neutral-500 text-xl mt-3">
+                    <p className="text-neutral-500 text-xl mt-3 px-auto">
                         User Manual for NumeralNinja Website
                     </p>
                 </div>
-                <div className="grid divide-y divide-neutral-200 max-w-2xl mx-auto mt-4 border-b-2 border-light border-dashed">
+                <div className="max-w-2xl mx-auto mt-4 grid divide-y divide-neutral-200 border-b-2 border-light border-dashed">
                     <div className="py-5">
                         <details className="group">
                             <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
@@ -76,7 +76,6 @@ export default function Manual() {
                 </div>
 
                 <div className="flex flex-col items-center mt-5 pb-3">
-
                     <button
                         onClick={exportToPDF}
                         type="submit"
