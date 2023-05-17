@@ -20,8 +20,8 @@ export default function StudentTaskGenerator() {
 
     return (
 
-        <div className="font-serif flex items-center flex-col bg-white">
-            <div className="bg-light p-5 rounded-xl shadow-xl ml-5 mr-5 mb-0 pb-4 flow-root">
+        <div className="font-serif flex items-center flex-col py-6 bg-white">
+            <div className="bg-light p-5 rounded-xl shadow-xl mx-5 pb-4 flow-root">
                 <div className="flex flex-col justify-center items-center text-center">
                     <div className="max-w-sm font-bold font-serif text-2xl">
                         My Task
@@ -30,7 +30,7 @@ export default function StudentTaskGenerator() {
                         Click to task and solved it
                     </div>
                 </div>
-
+                <form>
                 <div
                     className="mx-auto grid max-w-6xl grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3
                     lg:grid-cols-4"
@@ -53,24 +53,24 @@ export default function StudentTaskGenerator() {
                                     <input
                                         type={"number"}
                                         id={option.id}
+                                        placeholder="Count of tasks"
                                         value={option.selectedOption || ""}
                                         onChange={(e) => handleSelectChange(e, option.id)}
                                         className="block w-full py-2 px-4 pr-3 rounded-md bg-white border
                                         border-gray-300 focus:outline-none focus:ring-2 focus:ring-dark
                                         focus:border-azure"
                                     >
-
                                     </input>
-
                             </div>
                         </div>
                     ))}
                 </div>
                 <div className="flex justify-center">
-                    <button className="bg-dark text-white px-4 rounded-full py-3 hover:bg-azure">
+                    <button type={"submit"} className="bg-dark text-white px-4 rounded-full py-3 hover:bg-azure">
                         Generate
                     </button>
                 </div>
+                </form>
             </div>
         </div>
     )
