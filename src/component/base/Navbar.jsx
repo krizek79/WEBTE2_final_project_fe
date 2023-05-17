@@ -56,10 +56,14 @@ export default function NavBar() {
                                     -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6"
                                 >
                                     <li>
-                                        <a className="text-xl text-dark hover:text-gray-500" href="#">Define tasks</a>
+                                        <a className="text-xl text-dark hover:text-gray-500" href="/home">
+                                            Define tasks
+                                        </a>
                                     </li>
                                     <li>
-                                        <a className="text-xl text-dark hover:text-gray-500" href="#">Statistics</a>
+                                        <a className="text-xl text-dark hover:text-gray-500" href="/statistics">
+                                            Statistics
+                                        </a>
                                     </li>
                                 </ul>
                             )}
@@ -103,7 +107,7 @@ export default function NavBar() {
                                     <li className="mb-1">
                                         <a
                                             className="block p-4 text-xl font-semibold text-gray-400 hover:bg-gray-50
-                                        hover:text-azure rounded" href="#"
+                                        hover:text-azure rounded" href="/home"
                                         >
                                             Define tasks
                                         </a>
@@ -111,7 +115,7 @@ export default function NavBar() {
                                     <li className="mb-1">
                                         <a
                                             className="block p-4 text-xl font-semibold text-gray-400 hover:bg-gray-50
-                                        hover:text-azure rounded" href="#"
+                                        hover:text-azure rounded" href="/statistics"
                                         >
                                             Statistics
                                         </a>

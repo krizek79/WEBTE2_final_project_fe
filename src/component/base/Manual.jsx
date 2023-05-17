@@ -21,7 +21,7 @@ export default function Manual() {
 
     return (
         <>
-        <div className="relative container px-4 mx-auto py-6">
+        <div className="relative container px-4 mx-auto py-6 my-12">
             <div className="max-w-5xl px-3 mx-auto rounded-xl shadow-xl">
                 <div id="divToExport" >
                 <div className="flex flex-col items-center">

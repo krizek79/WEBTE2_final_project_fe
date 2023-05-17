@@ -1,6 +1,6 @@
 import Task from "../task/Task.jsx";
 import Manual from "./Manual.jsx";
-import TeacherTable from "./TeacherTable.jsx";
+import Statistics from "./Statistics.jsx";
 import StudentDetailsTable from "./StudentDetailsTable.jsx";
 import StudentTasksList from "../task/StudentTasksList.jsx";
 import StudentTaskGenerator from "../task/StudentTaskGenerator.jsx";
@@ -14,7 +14,7 @@ export default function BodyLayout() {
         <div className="flex-grow">
             <Task/>
             <Manual/>
-            <TeacherTable/>
+            <Statistics/>
             <StudentDetailsTable/>
             <StudentTasksList/>
             <StudentTaskGenerator/>

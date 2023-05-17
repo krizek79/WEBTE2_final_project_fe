@@ -1,15 +1,17 @@
-import  {useEffect, useState} from 'react'
-import taskService from "../../service/TaskService.js"
+import {useEffect, useState} from 'react'
+import studentService from "../../service/StudentService.js"
 import TextWithLatex from "../../util/TextWithLatex.jsx";
 
-export default function Task(props) {
+export default function Task() {
+
+    const urlParams = new URLSearchParams(window.location.search)
+    const id = urlParams.get("id")
 
     const [task, setTask] = useState({
-        description: "\n" +
-            "    Nájdite prenosovú funkciu $F(s)=\\dfrac{Y(s)}{W(s)}$ pre systém opísaný blokovou schémou: \n" +
-            "\n" +
-            "    \\includegraphics{zadanie99/images/blokovka01_00002.jpg} \n",
-        imageUrl: "../../../public/blokovka01_00002.jpg"
+        task: "",
+        image: "",
+        file_name: "",
+        points: 0
     })
 
     const [request, setRequest] = useState({
@@ -17,29 +19,21 @@ export default function Task(props) {
     })
 
     useEffect(() => {
-        // taskService.getTaskById(props.id)
-        //     .then(response => {
-        //         if (response.status === 200) {
-        //             console.log(response.data)
-        //         }
-        //     })
-        //     .catch(e => {
-        //         console.log(e.response.status + ": " + e.response.data.message)
-        //     })
+        studentService.getTaskById(id)
+            .then(response => {
+                if (response.status === 200) {
+                    console.log(response.data)
+                    setTask(response.data)
+                }
+            })
+            .catch(e => {
+                console.log(e.response.status + ": " + e.response.data.message)
+            })
     }, [])
 
     function submit(e) {
         e.preventDefault()
         console.log(request)
-        // taskService.submitTask(request)
-        //     .then(response => {
-        //         if (response.status === 200) {
-        //             console.log(response.data)
-        //         }
-        //     })
-        //     .catch(e => {
-        //         console.log(e.response.status + ": " + e.response.data.message)
-        //     })
     }
 
     function removeIncludeGraphics(str) {
@@ -59,12 +53,13 @@ export default function Task(props) {
                     </a>
                 </div>
                 <div className="flex flex-col shadow-md rounded-xl p-6 gap-y-3 bg-light">
+                    <h2 className="font-bold">{task.file_name} ({task.points} points)</h2>
                     <p className="w-full">
-                        <TextWithLatex text={removeIncludeGraphics(task.description)}/>
+                        <TextWithLatex text={removeIncludeGraphics(task.task)}/>
                     </p>
-                    {task.imageUrl && (
+                    {task.image && (
                         <div className="py-6 rounded-t-xl shadow-sm w-full h-auto">
-                            <img src={task.imageUrl} alt="Block" className="w-full h-auto"/>
+                            <img src={task.image} alt="Block" className="w-full h-auto"/>
                         </div>
                     )}
                     <form className="w-full flex flex-col gap-y-3" onSubmit={submit}>

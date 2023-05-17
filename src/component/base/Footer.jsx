@@ -1,12 +1,18 @@
+import {useNavigate} from "react-router-dom";
 
 export default function Footer() {
+
+    const navigate = useNavigate()
 
     return (
         <>
             <div className="w-full mt-14 bg-light">
             <footer className="p-4  rounded-lg shadow md:px-6 md:py-8 ">
                 <div className="flex flex-col items-center justify-center sm:flex-row sm:items-center sm:justify-between">
-                    <button className="rounded-md bg-dark px-10 py-2 text-white hover:bg-azure sm:order-first">
+                    <button
+                        className="rounded-md bg-dark px-10 py-2 text-white hover:bg-azure sm:order-first"
+                        onClick={() => navigate("/manual")}
+                    >
                         Manual
                     </button>
                     <a href="#" target="_blank" className="flex mb-4 sm:mb-0">
