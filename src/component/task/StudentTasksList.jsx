@@ -1,6 +1,5 @@
 import {useState} from "react";
 
-
 export default function StudentTasksList() {
 
     const [options, setOptions] = useState([
@@ -22,8 +21,6 @@ export default function StudentTasksList() {
             )
         );
     };
-
-
 
     return(
 
@@ -68,7 +65,5 @@ export default function StudentTasksList() {
                 </div>
             </section>
         </div>
-
-
     );
 }

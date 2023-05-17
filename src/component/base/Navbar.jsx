@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import {useNavigate} from "react-router-dom";
+import SubHeader from "./SubHeader.jsx";
 
 export default function NavBar() {
 
@@ -28,8 +29,8 @@ export default function NavBar() {
         <>
             <nav className="relative px-12 py-3 flex justify-between items-center bg-light">
                 <a
-                    className="flex text-3xl font-bold leading-none text-dark hover:text-azure"
-                    href="#"
+                    className="flex text-3xl font-bold leading-none text-dark hover:text-azure hover:cursor-pointer"
+                    onClick={() => navigate("/home")}
                 >
                     <img src="../../../public/logo.png" height={60} width={170} className="mr-10"  alt=""/>
 
@@ -138,6 +139,7 @@ export default function NavBar() {
                         </div>
                     </nav>
             </div>
+            <SubHeader/>
         </>
     )
 }

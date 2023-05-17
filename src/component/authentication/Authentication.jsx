@@ -24,7 +24,7 @@ export default function Authentication() {
     }
 
     return (
-        <main className="w-full py-12">
+        <main className="w-full py-24">
             <div className="w-full flex justify-center">
                 <div className="text-gray-600 text-lg flex flex-col md:flex-row justify-center">
                     <button
