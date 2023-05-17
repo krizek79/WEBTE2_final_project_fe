@@ -6,6 +6,8 @@ export default function RegistrationModal(props) {
     const toggleModal = props.action
     const [registrationRequest, setRegistrationRequest] = useState({
         email: "",
+        firstName: "",
+        lastName: "",
         password: "",
         matchingPassword: "",
         role: "student"
@@ -49,9 +51,35 @@ export default function RegistrationModal(props) {
         return true
     }
 
+    function validateFirstName(firstName) {
+        const firstNameError = document.getElementById("registrationFirstNameError")
+        if (firstName.length === 0) {
+            firstNameError.innerHTML = "Please enter your first name"
+            return false
+        }
+        firstNameError.innerHTML = ""
+        return true
+    }
+
+    function validateLastName(lastName) {
+        const lastNameError = document.getElementById("registrationLastNameError")
+        if (lastName.length === 0) {
+            lastNameError.innerHTML = "Please enter your last name"
+            return false
+        }
+        lastNameError.innerHTML = ""
+        return true
+    }
+
     function handleChange(e) {
         if (e.target.name === "email") {
             validateEmail(e.target.value)
+        }
+        if (e.target.name === "firstName") {
+            validateFirstName(e.target.value)
+        }
+        if (e.target.name === "lastName") {
+            validateLastName(e.target.value)
         }
         if (e.target.name === "password") {
             validatePassword(e.target.value)
@@ -66,13 +94,15 @@ export default function RegistrationModal(props) {
     function register() {
         let registrationError = document.getElementById("registrationError")
         let emailValid = validateEmail(registrationRequest.email)
+        let firstNameValid = validateFirstName(registrationRequest.firstName)
+        let lastNameValid = validateFirstName(registrationRequest.lastName)
         let passwordValid = validatePassword(registrationRequest.password)
         let matchingPasswordValid = validateMatchingPassword(
             registrationRequest.matchingPassword,
             registrationRequest.password
         )
 
-        if (!emailValid || !passwordValid || !matchingPasswordValid) {
+        if (!emailValid || !passwordValid || !matchingPasswordValid || !firstNameValid || !lastNameValid) {
             return
         }
 
@@ -134,6 +164,46 @@ export default function RegistrationModal(props) {
                                 focus:ring focus:ring-opacity-40"
                             />
                             <span id="registrationEmailError" className="text-red-500 text-sm"></span>
+                        </div>
+                        <div className="mb-2 w-full flex gap-x-3">
+                            <div className="w-full">
+                                <label
+                                    htmlFor="firstName"
+                                    className="block text-sm font-semibold text-gray-800"
+                                >
+                                    First name
+                                </label>
+                                <input
+                                    id="firstName"
+                                    type="text"
+                                    name={"firstName"}
+                                    value={registrationRequest.firstName}
+                                    onChange={handleChange}
+                                    className="block w-full px-4 py-2 mt-2 text-black bg-white border
+                                    rounded-md focus:border-blue-700 focus:ring-blue-300 focus:outline-none
+                                    focus:ring focus:ring-opacity-40"
+                                />
+                                <span id="registrationFirstNameError" className="text-red-500 text-sm"></span>
+                            </div>
+                            <div className="w-full">
+                                <label
+                                    htmlFor="lastName"
+                                    className="block text-sm font-semibold text-gray-800"
+                                >
+                                    Last name
+                                </label>
+                                <input
+                                    id="lastName"
+                                    type="text"
+                                    name={"lastName"}
+                                    value={registrationRequest.lastName}
+                                    onChange={handleChange}
+                                    className="block w-full px-4 py-2 mt-2 text-black bg-white border
+                                    rounded-md focus:border-blue-700 focus:ring-blue-300 focus:outline-none
+                                    focus:ring focus:ring-opacity-40"
+                                />
+                                <span id="registrationLastNameError" className="text-red-500 text-sm"></span>
+                            </div>
                         </div>
                         <div className="mb-2">
                             <label
