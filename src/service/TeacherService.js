@@ -27,4 +27,12 @@ export default new class TeacherService {
             }
         })
     }
+
+    getStatisticsByStudentId(id) {
+        return axios.get(TEACHER_API_BASE_URL + "/tasks/student/" + id, {
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem("token")
+            }
+        })
+    }
 }
