@@ -13,6 +13,13 @@ module.exports = {
         light: '#CBE4DE',
       },
     },
+    listStyleType: {
+      none: 'none',
+      disc: 'disc',
+      decimal: 'decimal',
+      square: 'square',
+      roman: 'upper-roman',
+    }
   },
   plugins: [],
 }
