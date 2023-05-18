@@ -6,6 +6,7 @@ export default function Manual() {
         const element = document.getElementById("divToExport");
 
         html2canvas(element).then((canvas) => {
+            //const textData = element.innerText;
             const imgData = canvas.toDataURL("image/png");
             const pdf = new jsPDF();
             const imgProps = pdf.getImageProperties(imgData);
@@ -31,21 +32,17 @@ export default function Manual() {
                                 User Manual for NumericalNinja Website
                             </p>
                         </div>
-                        <div className="max-w-2xl mx-auto mt-4 grid divide-y divide-neutral-200 border-b-2 border-light
-                        border-dashed"
-                        >
+                        <div className="max-w-2xl mx-auto mt-4 grid divide-y divide-neutral-200 border-b-2 border-light border-dashed">
                             <div className="py-5">
                                 <details className="group">
-                                    <summary className="flex justify-between items-center font-medium cursor-pointer
-                                    list-none"
-                                    >
+                                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
                                         <span>Teacher`s Manual:</span>
                                         <span className="transition group-open:rotate-180">
-                                            <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor"
-                                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"
-                                            viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
-                                            </svg>
-                                        </span>
+                                    <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor"
+                                         strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path
+                                        d="M6 9l6 6 6-6"></path>
+                                    </svg>
+                                </span>
                                     </summary>
                                     <ul className="space-y-4 text-neutral-500 list-decimal list-inside group-open:animate-fadeIn">
                                         <li>Registration and Role Selection:
@@ -59,8 +56,8 @@ export default function Manual() {
                                             <ul className="pl-5 mt-2 space-y-1 list-disc list-inside">
                                                 <li>After logging in as a teacher, you will have access to the main interface of the application.</li>
                                                 <li>On the main interface, you will find options for managing tasks for students.</li>
-                                                <li>Click on the (Add) button to select task files to send to students.</li>
-                                                <li>For each selected file, specify the number of points and the time period (from - to) in which students should complete the task.</li>
+                                                <li>Click on the (Add) button to select task collections to send to students.</li>
+                                                <li>For each selected collection, specify the number of points and the time period (from - to) in which students should complete the task.</li>
                                             </ul>
                                         </li>
 
@@ -104,9 +101,9 @@ export default function Manual() {
 
                                         <li>Selecting and Generating Tasks:
                                             <ul className="pl-5 mt-2 space-y-1 list-disc list-inside">
-                                                <li>After logging in as a student, you will see the available task files added by the teacher.</li>
+                                                <li>After logging in as a student, you will see the available task collections added by the teacher.</li>
                                                 <li>Select the number of exercises you want to solve.</li>
-                                                <li>After selecting the number of exercises, the system will randomly generate the exercises from the chosen file.</li>
+                                                <li>After selecting the number of exercises, the system will randomly generate the exercises from the chosen collection.</li>
                                                 <li>The exercises will be displayed as previews with links to open each exercise.</li>
                                             </ul>
                                         </li>
@@ -185,7 +182,7 @@ export default function Manual() {
                                                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                                   clipRule="evenodd"></path>
                                         </svg>
-                                        Example Generation
+                                        Task Generation
                                     </li>
                                     <li className="flex items-center">
                                         <svg className="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0"
@@ -203,7 +200,7 @@ export default function Manual() {
                                                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                                   clipRule="evenodd"></path>
                                         </svg>
-                                        Example Overview
+                                        Task Overview
                                     </li>
                                     <li className="flex items-center">
                                         <svg className="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0"
@@ -221,7 +218,7 @@ export default function Manual() {
                                                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                                   clipRule="evenodd"></path>
                                         </svg>
-                                        Selection of Examples
+                                        Selection of Tasks
                                     </li>
                                     <li className="flex items-center">
                                         <svg className="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0"
@@ -230,7 +227,7 @@ export default function Manual() {
                                                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                                   clipRule="evenodd"></path>
                                         </svg>
-                                        Selection of Example Files
+                                        Selection of Task Collections
                                     </li>
                                     <li className="flex items-center">
                                         <svg className="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0"
@@ -248,16 +245,7 @@ export default function Manual() {
                                                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                                   clipRule="evenodd"></path>
                                         </svg>
-                                        Recording Examples using an Editor
-                                    </li>
-                                    <li className="flex items-center">
-                                        <svg className="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0"
-                                             fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                            <path fillRule="evenodd"
-                                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                                  clipRule="evenodd"></path>
-                                        </svg>
-                                        Submission of Examples
+                                        Recording Tasks using an Editor
                                     </li>
                                     <li className="flex items-center">
                                         <svg className="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0"
@@ -312,6 +300,15 @@ export default function Manual() {
                                                   d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
                                                   clipRule="evenodd"></path>
                                         </svg>
+                                        Submission of Tasks
+                                    </li>
+                                    <li className="flex items-center">
+                                        <svg className="w-4 h-4 mr-1.5 text-gray-400 flex-shrink-0" fill="currentColor"
+                                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path fillRule="evenodd"
+                                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                                                  clipRule="evenodd"></path>
+                                        </svg>
                                         Docker Package
                                     </li>
                                 </ul>
@@ -323,7 +320,7 @@ export default function Manual() {
                             onClick={exportToPDF}
                             type="submit"
                             className="mt-10 rounded-md bg-dark px-10 py-2 text-white
-                            hover:bg-azure"
+                                                hover:bg-azure"
                         >
                             Export to pdf
                         </button>
